@@ -1,0 +1,84 @@
+.rectangle {
+    width: 9984px;
+    height: 1856px;
+    background-color: white;
+    border-radius: 150px;
+    border-width: 30px;
+    border-color: rgba(255, 255, 255, 1);
+  }
+  
+  #rectangle5 {
+    background-color: rgba(216, 216, 216, 0.1);
+    margin-left: 15247px;
+    margin-top: 27045px;
+  }
+  
+  #rectangle6 {
+    background-color: rgba(216, 216, 216, 0.1);
+    margin-left: 15247px;
+    margin-top: 20246px;
+  }
+  
+  .label {
+    width: 9434px;
+    height: 633px;
+    background-color: white;
+    color: rgba(181, 178, 178, 1);
+    font-family: "Inder-Regular", sans-serif;
+    font-size: 800px;
+    line-height: 1000px;
+  }
+  
+  #nombres {
+    margin-left: 18401px;
+    margin-top: 20541px;
+  }
+  
+  #email {
+    margin-left: 19081px;
+    margin-top: 27340px;
+  }
+  
+  #apellidos {
+    margin-left: 18360px;
+    margin-top: 24069px;
+  }
+  
+  #rectangle3 {
+    width: 9984px;
+    height: 1856px;
+    background-color: white;
+    border-radius: 150px;
+    border-width: 30px;
+    border-color: rgba(255, 255, 255, 1);
+    position: relative;
+  }
+  
+  #rectangle3 .shadows {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  #rectangle3 .shadows .shadow-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #rectangle3 .shadows .shadow-layer:nth-child(1) {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .button .shadows .shadow-layer:nth-child(2) {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  #rectangle3 .shapes {
+    width: 100%;
+    height: 100%;
+    border-radius: 150px;
+    border-width: 30px;
+    border-color: rgba(255, 255, 255, 1);
+   
+  }
