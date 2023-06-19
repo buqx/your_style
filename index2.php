@@ -31,15 +31,15 @@ if(isset($_POST["enviar"])){
                 <ul>
                   <li>
                      <label for="email_is"></label>
-                     <input type="email" id="email_is" name="email_is" placeholder="Email">
+                     <input type="email" id="email_is" name="email_is" placeholder="Email" required>
                   </li>
                   <li>
                     <label for="pass_cli1"></label>
-                    <input type="password" id="pass_cli1" name="pass_cli1" placeholder="Contraseña">
+                    <input type="password" id="pass_cli1" name="pass_cli1" placeholder="Contraseña" required>
                   </li>
                  
                  <li class="button">
-                    <input name="enviar"type="submit">REGISTRARSE</input>
+                    <input name="enviar"type="submit"></input>
                   </li>
                 </ul>
             </form>
@@ -52,23 +52,25 @@ if(isset($_POST["enviar"])){
 $conexion = mysqli_connect("localhost", "root", "", "taller_java") or die("Problemas con la conexión");
 
 // Obtener los valores enviados desde el formulario
-
-  if (isset($_POST['email_is']) && isset($_POST['pass_cli1'])) {
+if (isset($_POST['email_is']) && isset($_POST['pass_cli1'])) {
     $email = $_POST['email_is'];
     $password = $_POST['pass_cli1'];
     $sql = "SELECT * FROM clientes WHERE email = '$email' AND pass_cli = '$password'";
     $query = mysqli_query($conexion, $sql);
-    if ($query === false) {
-      echo "Error: " . mysqli_error($conexion);
-      exit;
+
+        if ($query === false) {
+            echo "Error: " . mysqli_error($conexion);
+            exit;
+        }
+
+        if (mysqli_num_rows($query) > 0) {
+            header('Location: index3.php');
+            exit;
+        } else {
+          header('Location: index4.php');
+          exit;
+        }
     }
-    if (mysqli_num_rows($query) > 0) {
-      header('Location: index3.php');
-      exit;
-    } else {
-      $alerta = "Nombre o contraseña incorrectos.";
-    }
-  }
 
 ?>
 </html>

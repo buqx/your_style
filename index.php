@@ -18,22 +18,22 @@
                 <ul style="margin-left: 0px;">
                  <li>
                    <label for="nom_cli"></label>
-                   <input  type="text" id="nom_cli" name="nom_cli" placeholder="Nombres">
+                   <input  type="text" id="nom_cli" name="nom_cli" placeholder="Nombres" required>
                  </li>
                  <li>
                     <label for="ape_cli"></label>
-                    <input type="text" id="ape_cli;" name="ape_cli" placeholder="Apellidos"></input>
+                    <input type="text" id="ape_cli;" name="ape_cli" placeholder="Apellidos" required></input>
                   </li>
                  <li>
                    <label for="email"></label>
-                   <input type="email" id="email" name="email" placeholder="Email">
+                   <input type="email" id="email" name="email" placeholder="Email" required>
                  </li>
                  <li>
                   <label for="pass_cli"></label>
-                  <input type="password" id="pass_cli" name="pass_cli" placeholder="Contraseña">
+                  <input type="password" id="pass_cli" name="pass_cli" placeholder="Contraseña" required>
                 </li>
                  <li class="button">
-                    <input name="enviar";style="width: 102%; height: 99%;" type="submit"</input>
+                    <input name="enviar";style="width: 102%; height: 99%;" type="submit"></input>
                   </li>
                   <link rel="stylesheet" href="index2.html">
                 </ul>

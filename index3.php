@@ -24,7 +24,7 @@
         </ul>
     </nav>
     <div class="imagen1"><img src="11.png" alt="" >
-    <div class="container">
+    <div class="container1">
     <span class="texto">CamisetaX <br>  69.999$</span>
     <button class="boton" type="submit" id="agregar1" name="agregar1">Agregar</button>
     </div>
