@@ -1,4 +1,9 @@
+<?php
+   session_start();
+   $nom = $_SESSION['nombre'];
+?>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,23 +18,31 @@
           <a>Your Style</a>
         </div>
         <ul>
+            <li><a href="#">Bienvenido <?php echo $nom; ?></a></li>
           <li><a href="#">Home</a></li>
           <li><a href="index2.php">Salir</a></li>
         </ul>
-      </nav>
-      <div class="image-square"><img src="1 1.png" alt="">
-      <div class="image-square-1"><img src="2 1.png" alt=""></div>
+    </nav>
+    <div class="imagen1"><img src="11.png" alt="" >
+    <div class="container">
+    <span class="texto">CamisetaX <br>  69.999$</span>
+    <button class="boton" type="submit" id="agregar1" name="agregar1">Agregar</button>
+    </div>
+    </div>
+    <div class="imagen2"><img src="2 1.png" alt="">
+    <div class="container">
+    <span class="texto">Air Force 1 <br>  799.999$</span>
+    <button class="boton" type="submit">Agregar</button>
+    </div>
+    </div>
     
       
 </body>
 <?php
 $conexion = mysqli_connect("localhost", "root", "", "taller_java") or die("Problemas con la conexión");
-
 // Verificar si se ha hecho clic en el botón "agregar1"
-if(isset($_POST['enviar1'])) {
+if(isset($_POST['agregar1'])) {
     // Obtener los valores de las foreign keys desde el formulario
-
-    
 
     // Realizar la inserción en la tabla
     $sql = "INSERT INTO detalles_pedidos (id_cli, id_pro) VALUES ('$id_cli', '$id_pro')"; // Reemplaza "nombre_tabla" con el nombre de tu tabla
@@ -44,25 +57,5 @@ if(isset($_POST['enviar1'])) {
     $conn->close();
 }
 ?>
-<?php/*
-$conexion = mysqli_connect("localhost", "root", "", "taller_java") or die("Problemas con la conexión");
-$query = "INSERT INTO detalles_pedidos (id_cli, id_pro) VALUES ( ?, ?)";
-$id__cli = "SELECT id_cli FROM clientes WHERE email = '$email' ";
-$id__pro = "SELECT id_pro FROM productos where id_pro = 1";
-$stmt = mysqli_prepare($conexion, $query);
-// Obtener los valores enviados desde el formulario
-if (isset($_POST['enviar1'])){
-  if (!empty($id__cli) && !empty($id__pro) ) {
-     // Escapar los valores para evitar inyección SQL
-     $id_cli = mysqli_real_escape_string($conexion, $id_cli);
-     $id_pro = mysqli_real_escape_string($conexion, $id_pro);
-     // Asociar los valores a los parámetros de la consulta preparada
-     mysqli_stmt_bind_param($stmt, "ss", $id_cli, $id_pro);
-     // Ejecutar la consulta
-     mysqli_stmt_execute($stmt);
-     header("Location: index4.php");
-     exit();
-   }
-  }
-?>*/
+
 </html>

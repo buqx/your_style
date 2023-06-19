@@ -1,7 +1,7 @@
 /* Estilos generales */
 .fondo {
     background-color: #141416;
-    max-width: 1500px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
   }
@@ -14,13 +14,12 @@
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
   
   .inicio_sesion form ul li {
     height: 30px;
     width: 250px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 15px;
   }
   
@@ -28,14 +27,14 @@
     color: #b5b1b1;
   }
   
-  input {
+ input {
     border-radius: 3px;
     border-width: 1px;
     border: 1px solid white;
     background-color: #555555;
     text-align: center;
     color: #ffffff;
-    width: 100%;
+    width: 250px;
     box-sizing: border-box;
     padding: 5px;
   }
@@ -44,19 +43,12 @@
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   }
   
-  /* Media queries para hacer el diseño responsive */
-  @media (max-width: 768px) {
-    /* Modificar el tamaño de la imagen de navegación */
-    .imagen_nav img {
-      height: 200px;
-    }
   
     /* Centrar los elementos del formulario */
     .inicio_sesion form ul li {
-      width: 100%;
-      margin-left: 0;
+      margin-left: 600px;
       margin-right: 0;
     }
-  }
+  
   
   

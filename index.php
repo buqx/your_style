@@ -14,23 +14,23 @@
         </div>
         <hr style="color: aliceblue; width: 80%;margin-top: 100px;margin-bottom: 100px;" >
         <div class="inicio_sesion">
-            <form  method="post">
-                <ul>
+            <form method="post">
+                <ul style="margin-left: 0px;">
                  <li>
                    <label for="nom_cli"></label>
-                   <input style="width: 99%; height: 99%;" type="text" id="nom_cli" name="nom_cli" placeholder="Nombres">
+                   <input  type="text" id="nom_cli" name="nom_cli" placeholder="Nombres">
                  </li>
                  <li>
                     <label for="ape_cli"></label>
-                    <input type="text" style="width: 99%; height: 99%;"id="ape_cli;" name="ape_cli" placeholder="Apellidos"></input>
+                    <input type="text" id="ape_cli;" name="ape_cli" placeholder="Apellidos"></input>
                   </li>
                  <li>
                    <label for="email"></label>
-                   <input style="width: 99%; height: 99%;"type="email" id="email" name="email" placeholder="Email">
+                   <input type="email" id="email" name="email" placeholder="Email">
                  </li>
                  <li>
                   <label for="pass_cli"></label>
-                  <input style="width: 99%; height: 99%;"type="password" id="pass_cli" name="pass_cli" placeholder="Contraseña">
+                  <input type="password" id="pass_cli" name="pass_cli" placeholder="Contraseña">
                 </li>
                  <li class="button">
                     <input name="enviar";style="width: 102%; height: 99%;" type="submit"</input>
@@ -45,19 +45,18 @@
 </body>
 <?php
   $conexion = mysqli_connect("localhost", "root", "", "taller_java") or die("Problemas con la conexión");
-  
   // Utilizar sentencias preparadas para evitar inyección de SQL
   $query = "INSERT INTO clientes (nom_cli, ape_cli, email, pass_cli) VALUES (?, ?, ?, ?)";
   $stmt = mysqli_prepare($conexion, $query);
   
   // Obtener los valores enviados desde el formulario
-  $nom_cli = $_POST['nom_cli'];
-  $ape_cli = $_POST['ape_cli'];
-  $email = $_POST['email'];
-  $pass_cli = $_POST['pass_cli'];
   
   // Verificar si los campos no están vacíos antes de ejecutar la consulta INSERT
-  if (isset($_POST['enviar'])){
+  if (isset($_POST['nom_cli'])&& isset($_POST['ape_cli']) && isset($_POST['email'])){
+    $nom_cli = $_POST['nom_cli'];
+    $ape_cli = $_POST['ape_cli'];
+    $email = $_POST['email'];
+    $pass_cli = $_POST['pass_cli'];
    if (!empty($nom_cli) && !empty($ape_cli) && !empty($email) && !empty($pass_cli)) {
       // Escapar los valores para evitar inyección SQL
       $nom_cli = mysqli_real_escape_string($conexion, $nom_cli);

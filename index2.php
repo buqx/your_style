@@ -1,3 +1,16 @@
+<?php 
+$conexion = mysqli_connect("localhost", "root", "", "taller_java") or die("Problemas con la conexión");
+if(isset($_POST["enviar"])){
+  session_start();
+  $email = $_POST['email_is'];
+  $password = $_POST['pass_cli1'];
+  $sql = "SELECT * FROM clientes WHERE email = '$email' AND pass_cli = '$password'";
+  $query = mysqli_query($conexion, $sql);
+  $cliente = mysqli_fetch_assoc($query);
+  $_SESSION['nombre'] = $cliente['nom_cli'];
+  header("Location: index3.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,15 +31,15 @@
                 <ul>
                   <li>
                      <label for="email_is"></label>
-                     <input style="width: 99%; height: 99%;"type="email" id="email_is" name="email_is" placeholder="Email">
+                     <input type="email" id="email_is" name="email_is" placeholder="Email">
                   </li>
                   <li>
                     <label for="pass_cli1"></label>
-                    <input style="width: 99%; height: 99%;"type="password" id="pass_cli1" name="pass_cli1" placeholder="Contraseña">
+                    <input type="password" id="pass_cli1" name="pass_cli1" placeholder="Contraseña">
                   </li>
                  
                  <li class="button">
-                    <input name="enviar" style="width: 102%; height: 99%;" type="submit">REGISTRARSE</input>
+                    <input name="enviar"type="submit">REGISTRARSE</input>
                   </li>
                 </ul>
             </form>
@@ -39,31 +52,23 @@
 $conexion = mysqli_connect("localhost", "root", "", "taller_java") or die("Problemas con la conexión");
 
 // Obtener los valores enviados desde el formulario
-$email = $_POST['email_is'];
-$password = $_POST['pass_cli1'];
 
-// Escapar los valores para evitar inyección SQL
-$email = $conexion->real_escape_string($email);
-$password = $conexion->real_escape_string($password);
+  if (isset($_POST['email_is']) && isset($_POST['pass_cli1'])) {
+    $email = $_POST['email_is'];
+    $password = $_POST['pass_cli1'];
+    $sql = "SELECT * FROM clientes WHERE email = '$email' AND pass_cli = '$password'";
+    $query = mysqli_query($conexion, $sql);
+    if ($query === false) {
+      echo "Error: " . mysqli_error($conexion);
+      exit;
+    }
+    if (mysqli_num_rows($query) > 0) {
+      header('Location: index3.php');
+      exit;
+    } else {
+      $alerta = "Nombre o contraseña incorrectos.";
+    }
+  }
 
-// Crear la consulta SQL
-$sql = "SELECT * FROM clientes WHERE email = '$email' AND pass_cli = '$password'";
-global $id__cli = "SELECT id_cli FROM clientes WHERE email = '$email' ";
-global $id__pro = "SELECT id_pro FROM productos where id_pro = 1"
-
-// Ejecutar la consulta
-$result = $conexion->query($sql);
-
-// Verificar si se encontraron registros
-if ($result->num_rows > 0) {
-    // Los datos coinciden, hacer algo aquí 
-    header("Location: index3.php");
-    exit();
-} else {
-    // Los datos no coinciden, hacer algo aquí
-    echo "Los datos no coinciden";
-}
-// Cerrar la conexión
-$conexion->close();
 ?>
 </html>
