@@ -18,9 +18,9 @@
           <a>Your Style</a>
         </div>
         <ul>
-            <li><a href="#">Bienvenido <?php echo $nom; ?></a></li>
-            <li><a href="index5.php">Editar perfil</a></li>
-          <li><a href="close_session.php">Salir</a></li>
+            <li style="font-size=30px;"><a href="#">Bienvenido <?php echo $nom; ?></a></li>
+            <li style="font-size=30px;"><a href="index5.php">Editar perfil</a></li>
+          <li style="font-size=30px;"><a href="close_session.php">Salir</a></li>
         </ul>
     </nav>
     <div class="imagen1"><img src="11.png" alt="" >

@@ -34,7 +34,8 @@
                   <input type="password" id="pass_cli" name="pass_cli" placeholder="Contraseña" required>
                 </li>
                  <li class="button">
-                    <input name="enviar";style="width: 102%; height: 99%;" type="submit"></input>
+                    <input name="enviar";style="width: 102%; height: 99%;" type="submit" value="REGISTRARSE"></input>
+                    <a href="index2.php" style="color:white; text-decoration:none">Iniciar Session</a>
                   </li>
                   <link rel="stylesheet" href="index2.html">
                 </ul>

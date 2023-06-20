@@ -42,6 +42,7 @@ if(isset($_POST["enviar"])){
                  
                  <li class="button">
                     <input name="enviar"type="submit"></input>
+                    <a href="index.php" style="color:white;text-decoration:none">Registrarse</a>
                   </li>
                 </ul>
             </form>
