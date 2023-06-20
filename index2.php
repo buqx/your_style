@@ -8,6 +8,7 @@ if(isset($_POST["enviar"])){
   $query = mysqli_query($conexion, $sql);
   $cliente = mysqli_fetch_assoc($query);
   $_SESSION['nombre'] = $cliente['nom_cli'];
+  $_SESSION['clienteid'] = $cliente['id_cli'];
   header("Location: index3.php");
 }
 ?>
@@ -25,6 +26,7 @@ if(isset($_POST["enviar"])){
         <div class="imagen_nav">
             <img src="Screenshot 2023-05-30 103050.png" alt="">
         </div>
+        <h1 style="color:white; text-align:center">Iniciar Session</h1>
         <hr style="color: aliceblue; width: 80%;margin-top: 100px;margin-bottom: 100px;" >
         <div class="inicio_sesion">
             <form method="post">
