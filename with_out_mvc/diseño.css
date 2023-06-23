@@ -1,0 +1,53 @@
+/* Estilos generales */
+.fondo {
+  background-color: #141416;
+  padding: 20px;
+  height: 1500px;
+}
+
+.imagen_nav img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inicio_sesion form ul li {
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+input::placeholder {
+  color: #b5b1b1;
+}
+
+input {
+  border-radius: 3px;
+  border-width: 1px;
+  border: 1px solid white;
+  background-color: #555555;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.shadows .shadow-layer:nth-child(2) {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Centrar los elementos del formulario */
+.inicio_sesion form ul li {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
+}
+
+  
+  
+  
