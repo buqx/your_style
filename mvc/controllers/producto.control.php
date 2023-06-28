@@ -37,9 +37,9 @@ class ProductoControl
         }
         return $pro_obj; // Se retorna el objeto de productos
     }
-    public function insertProducto( $nom_pro, $precio_pro, $descripcion_pro)
+    public function insertProducto( $id_pro,$nom_pro, $precio_pro, $descripcion_pro)
     {
-        $producto_obj = new Productos($nom_pro, $precio_pro, $direccion_pro);
+        $producto_obj = new Productos($id_pro,$nom_pro, $precio_pro, $descripcion_pro);
         $producto = $producto_obj->insertar_productos();
         return $producto;
     }

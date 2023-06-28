@@ -41,10 +41,11 @@ class Productos extends connection
     public function insertar_productos()
     {
         try {
-            $sql = $this->dbConnection->prepare("INSERT INTO productos ( nom_pro, precio_pro, descripcion_pro)values(?,?,?)"); 
-            $sql->bindParam(1, $this->nom_pro);
-            $sql->bindParam(2, $this->precio_pro);
-            $sql->bindParam(3, $this->descripcion_pro);
+            $sql = $this->dbConnection->prepare("INSERT INTO productos ( id_pro,nom_pro, precio_pro, descripcion_pro)values(?,?,?,?)"); 
+            $sql->bindParam(1, $this->id_pro);
+            $sql->bindParam(2, $this->nom_pro);
+            $sql->bindParam(3, $this->precio_pro);
+            $sql->bindParam(4, $this->descripcion_pro);
             // Ejecutamos
             $sql->execute();
             return $sql;

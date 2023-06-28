@@ -4,6 +4,7 @@ include_once '../../controllers/producto.control.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtén los valores del formulario
+    $id_pro = $_POST['id_pro'];
     $nom_pro = $_POST['nom_pro'];
     $precio_pro = $_POST['precio_pro'];
     $descripcion_pro = $_POST['descripcion_pro'];
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $controlador = new ProductoControl();
 
     // Llama a la función editar_producto para actualizar los datos del producto
-    $controlador->insertProducto( $nom_pro, $precio_pro, $descripcion_pro);
+    $controlador->insertProducto($id_pro, $nom_pro, $precio_pro, $descripcion_pro);
 
     // Redirecciona a la página de lista de productos o a donde desees
     header('Location: list_producto.php');
